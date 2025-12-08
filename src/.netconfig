@@ -1,0 +1,9 @@
+[serve]
+	path-base = ""
+	port = 8081
+	tls
+	open-browser
+	brotli
+	mime = .otf=application/x-font-opentype
+	mime = .webmanifest=application/manifest+json
+	mime = .webp=image/webp

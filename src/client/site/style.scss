@@ -1,0 +1,35 @@
+.pagefind-ui__form
+{
+    max-width: initial !important;
+}
+
+.current{
+    font-weight: 700;
+}
+
+.current a{
+    color: #000;
+    text-decoration: none;
+}
+
+.eleventy-plugin-youtube-embed
+{
+    margin-bottom: 2rem;
+}
+
+.strath-bootstrap input, .strath-bootstrap button, .strath-bootstrap select, .strath-bootstrap optgroup, .strath-bootstrap textarea {
+    font-family: "Roboto", sans-serif;
+}
+
+.bullets ul {
+    list-style-type: none;
+}
+
+.whitetext{
+    color: #fff !important;
+}
+
+#uosPageTitleImage {
+    border-bottom: 10px solid #ee3224;
+    margin-bottom: 0;
+}

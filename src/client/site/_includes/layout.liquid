@@ -1,0 +1,30 @@
+---
+layout: "themes/strathweb2022/main"
+---
+
+<div data-pagefind-body class="container mt-4 mb-4">
+
+    <h1 class="d-none" data-pagefind-meta="title">{{ title }}</h1>
+
+    <div class="d-none mb-4" style="margin-right: -9px" id="content-search" data-content-id="main-content"></div>
+
+    <div id="main-content" class="row">
+
+        <div class="col-lg-9">
+            {{ content }}
+        </div>
+
+        {% comment %} This example assumes the "strathweb2022" template {% endcomment %}
+        <div class="col mt-4 mt-lg-0 text-end p-4" style="background-color: #f1f1f1">
+            <p class="h5">All pages in {{ global.data.SiteName }}</p>
+            <ul>
+                {% for page in collections.sortedByOrder %}
+                <li class="{% if page.data.title == title %}current{% endif %}">
+                    <a style="color:#002b5c" href="{{ page.url | getPathPrefix }}">{{ page.data.title | replace: global.data.SiteName, "" }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</div>

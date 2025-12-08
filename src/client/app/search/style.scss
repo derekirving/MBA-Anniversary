@@ -1,0 +1,82 @@
+﻿/*! purgecss start ignore */
+.pagefind-ui__form:before {
+  width: 1rem !important;
+  top: calc(13px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__search-input {
+  border: 1px solid #dee2e6 !important;
+  border-radius: 0 !important;
+  height: 2rem !important;
+  font-weight: 400 !important;
+  font-size: calc(18px * var(--pagefind-ui-scale)) !important;
+  color: #000000 !important;
+  background-color:#f5f5f5;
+}
+
+.pagefind-ui__search-input::placeholder {
+  color: #000000 !important;
+  opacity: 0.5 !important; /* Firefox */
+}
+
+.pagefind-ui__search-input::-ms-input-placeholder {
+  color: #000000 !important;
+}
+
+.pagefind-ui__search-input[placeholder] {
+	text-overflow: ellipsis;
+}
+
+.pagefind-ui__search-clear {
+  height: calc(38px * var(--pagefind-ui-scale)) !important;
+  padding: 0 calc(8px * var(--pagefind-ui-scale)) !important;
+  background-color: initial !important;
+  color: #000000 !important;
+}
+
+.pagefind-ui__drawer {
+  margin-top: 13px;
+  border: 1px solid #002b5c;
+  padding: 10px;
+  width: 100%;
+  background-color: #f1f1f1;
+  z-index: 10;
+  position: absolute;
+}
+
+.pagefind-ui__message {
+  font-size: calc(20px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__results-area
+{
+  margin-top: initial !important;
+  padding-bottom: 20px;
+}
+
+.pagefind-ui__result {
+  padding: calc(5px * var(--pagefind-ui-scale)) 0 !important;
+}
+
+.pagefind-ui__result-title
+{
+  font-size: 1.07rem !important;
+  font-weight: 400 !important;
+  text-decoration: underline !important;
+  font-family: "Alegreya Sans", sans-serif !important;
+}
+
+.pagefind-ui__result-excerpt
+{
+  font-family: "Alegreya Sans", sans-serif !important;
+  font-size: 1.07rem !important;
+  line-height: 1.4 !important;
+}
+
+.pagefind-ui__result-link {
+  color: #0078ae !important;
+}
+.pagefind-ui__filter-name {
+  font-size: calc(16px * var(--pagefind-ui-scale)) !important;
+}
+/*! purgecss end ignore */

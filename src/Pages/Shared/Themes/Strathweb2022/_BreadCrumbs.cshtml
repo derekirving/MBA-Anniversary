@@ -1,0 +1,40 @@
+@if (ViewData["breadcrumbs"] != null)
+{
+    var breadCrumbs = ViewData["breadcrumbs"] as Dictionary<string, string>;
+
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb-nav container" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list" id="strathBreadcrumb">
+                <li>
+                    <a style="text-decoration:none;" href="https://www.strath.ac.uk/business" aria-label="Go to Home Page">
+                        <span class="fa fa-home fa-lg" aria-hidden="true"></span>
+                    </a>
+                </li>
+                @if (breadCrumbs != null)
+                {
+                    foreach (var item in breadCrumbs)
+                    {
+                        if (item.Value != string.Empty)
+                        {
+                            <li>
+                                @if (item.Value.StartsWith("https://"))
+                                {
+                                    <a href="@item.Value">@item.Key</a>
+                                }
+                                else
+                                {
+                                    <a asp-page="@item.Value">@item.Key</a>
+                                }
+                               
+                            </li>
+                        }
+                        else
+                        {
+                            <li>@item.Key</li>
+                        }
+                    }
+                }
+            </ol>
+        </nav>
+    </div>
+}
