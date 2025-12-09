@@ -81,7 +81,7 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
         </p>
 
         <p>
-          <a class="btn btn-primary mt-3" href="#timeline">See our timeline</a>
+          <a class="btn btn-primary btn-lg mt-3" href="#timeline">See our timeline</a>
         </p>
       </div>
 
@@ -211,55 +211,22 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
     </p>
 
          <div class="{{ rowsx4 }}">
-
-{% card %}
-{
-  "title": "Considering an MBA? Go for it!",
-  "text": "Daechuck Lee did his MBA full time at Strathclyde. Here, he explains what he loved about his time here - so much so, he is setting up a scholarship for Koreans who want to do the same.",
-  "link": "https://www.sbs.strath.ac.uk/blogs/SBS/post.aspx?id=1437#post",
-  "image": "./images/Banner_OFAGQPLAZNDDUZF.jpg",
-  "alt": "Image depicting the idea of 'just do it!"
-}
-{% endcard %}
-
-{% card %}
-{
-  "title": "Volunteering and the MBA: two pathways converging",
-  "text": "As lock-down descended on the UK in March 2020, MBA student Marc Jordan felt compelled to help and volunteered in the care sector.",
-  "link": "https://www.sbs.strath.ac.uk/blogs/SBS/post.aspx?id=1457#post",
-  "image": "./images/Banner_KUAVCNMBVYUQIPN.jpg",
-  "alt": "Image depicting the idea of 'converging'"
-}
-{% endcard %}
-
-{% card %}
-{
-  "title": "Margaret English retires",
-  "text": "Margaret English was a well-known face to students on our full time MBA programme - after almost 40 years at Strathclyde, she retired and here, she reflected on her time at Strathclyde and what it has meant to her.",
-  "link": "https://www.sbs.strath.ac.uk/blogs/SBS/post.aspx?id=1469#post",
-  "image": "./images/Banner_LPTNOBPEDDSCXIR.jpg",
-  "alt": "Image depicting the idea of 'New Chapter'"
-}
-{% endcard %}
-
-{% card %}
-{
-  "title": "Part time study, full time benefits (Exec MBA)",
-  "text": "Having completed his MBA via part-time study, James Brewster reflects on why he did it, what he got out of it, and if he’d do it again.",
-  "link": "https://www.sbs.strath.ac.uk/blogs/SBS/post.aspx?id=1498#post",
-  "image": "./images/Banner_RXMGFHXGBQLWXLQ.jpg",
-  "alt": "Image of dice with one face showing the word 'full-time' and the other 'part-time'"
-}
-{% endcard %}
-
+            {% for post in collections.blogs reversed limit: 4 %}
+              <div class="col">
+                <a class="card-link" href="{{ post.url }}">
+                  <div class="card">
+                    <img src="{{ base_path }}{{ post.data.image.src }}" class="card-img-top" alt="{{ post.data.image.alt }}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ post.data.title }}</h5>
+                      <p class="card-text">{{ post.data.description }}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
         </div>
 
-
-    
-
-      
-
-      <p><a class="btn btn-primary mt-4" href="/blogs">See all MBA focussed Blogs</a></p>
+      <p><a class="btn btn-primary mt-4" href="{{ base_path }}anniversary-blogs">See all MBA focussed Blogs</a></p>
     </div>
   </div>
 </div>

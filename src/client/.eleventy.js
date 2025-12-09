@@ -41,6 +41,10 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("blogs", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("site/blogs/*.md");
+    });
+
     // An example of an 11ty paired shortcode that creates two columns
     eleventyConfig.addPairedShortcode("2cols", function (content) {
         const columns = content.split('<col>').filter(col => col.trim() !== '');
@@ -78,6 +82,19 @@ module.exports = function (eleventyConfig) {
             </div>
         </li>`;
     });
+
+    /*
+    // Not using this in favour of collections but this is how to call it: 
+    {% card %}
+        {
+        "title": "Considering an MBA? Go for it!",
+        "text": "Daechuck Lee did his MBA full time at Strathclyde. Here, he explains what he loved about his time here - so much so, he is setting up a scholarship for Koreans who want to do the same.",
+        "link": "https://www.sbs.strath.ac.uk/blogs/SBS/post.aspx?id=1437#post",
+        "image": "./images/blogs/Banner_OFAGQPLAZNDDUZF.jpg",
+        "alt": "Image depicting the idea of 'just do it!"
+        }
+    {% endcard %}
+    */
 
     eleventyConfig.addPairedShortcode("card", function (content) {
         console.log(content);
