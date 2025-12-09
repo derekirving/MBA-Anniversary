@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "mba-anniversary",
   "version": "0.0.1",
   "description": "src is a static site using Unify",
   "main": "./site/main.js",
@@ -37,6 +37,7 @@
     }
   },
   "devDependencies": {
+    "@tsparticles/confetti": "^3.9.1",
     "@unify/web": "^8.1.8",
     "@unify/web.staticsites": "^8.1.9",
     "@unify/web.theme.strathweb2022": "^8.0.14",

@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
     });
 
     // An example 11ty custom collection. Sort based on the "order" parameter in front matter
-	eleventyConfig.addCollection("sortedByOrder", function (collection) {
+    eleventyConfig.addCollection("sortedByOrder", function (collection) {
         return collection.getFilteredByTag("page").sort((a, b) => {
             const orderA = a.data.order || 0;
             const orderB = b.data.order || 0;
@@ -58,6 +58,41 @@ module.exports = function (eleventyConfig) {
             <div class="col-md-6">${renderedColumns[1]}</div>
           </div>
         `;
+    });
+
+    eleventyConfig.addShortcode("youtube", content => {
+        return `
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/${content}?rel=0" allowfullscreen></iframe>
+        </div>
+        `;
+    });
+
+    eleventyConfig.addPairedShortcode("timeline", function (content, year, headline) {
+
+        return `<li>
+            <div class="timeline_content">
+                <span>${year}</span>
+                <h4>${headline}</h4>
+                <p>${content}</p>
+            </div>
+        </li>`;
+    });
+
+    eleventyConfig.addPairedShortcode("card", function (content) {
+        console.log(content);
+        const obj = JSON.parse(content);
+        return `<div class="col">
+      <a class="card-link" href="${obj.link}">
+        <div class="card">
+          <img src="${obj.image}" class="card-img-top" alt="${obj.alt}">
+          <div class="card-body">
+            <h5 class="card-title">${obj.title}</h5>
+            <p class="card-text">${obj.text}</p>
+          </div>
+        </div>
+      </a>
+    </div>`;
     });
 
     return {
