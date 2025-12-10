@@ -5,9 +5,9 @@ title: Anniversary Blogs
   <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-5">
     {% for post in collections.blogs %}
       <div class="col">
-        <a class="card-link" href="{{ post.url }}">
+        <a class="card-link" href="{{ post.url | url}}">
           <div class="card">
-            <img src="{{ base_path }}{{ post.data.image.src }}" class="card-img-top" alt="{{ post.data.image.alt }}">
+            <img src="{{ post.data.image.src | url }}" class="card-img-top" alt="{{ post.data.image.alt }}">
             <div class="card-body">
               <h5 class="card-title">{{ post.data.title }}</h5>
               <p class="card-text">{{ post.data.description }}</p>

@@ -41,8 +41,26 @@ module.exports = function (eleventyConfig) {
         });
     });
 
-    eleventyConfig.addCollection("blogs", function (collectionApi) {
-        return collectionApi.getFilteredByGlob("site/blogs/*.md");
+    eleventyConfig.addShortcode("pageUrl", function (path) {
+        const allPages = this.ctx.environments.collections?.all || [];
+
+        const normalizedPath = path.replace(/^\.\//, '');
+
+        const page = allPages.find(p => {
+            const inputPath = p.inputPath.replace(/^\.\//, '');
+            return inputPath.includes(normalizedPath) || inputPath.endsWith(normalizedPath);
+        });
+
+       if (!page) {
+            console.warn(`Could not find page for path: ${path}`);
+            return '#';
+        }
+
+        return basePath + page.url;
+    });
+
+    eleventyConfig.addCollection("blogs", function (collections) {
+        return collections.getFilteredByGlob("site/blogs/*.md");
     });
 
     // An example of an 11ty paired shortcode that creates two columns
