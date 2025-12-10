@@ -485,8 +485,7 @@ $RECYCLE.BIN/
 [Aa]pp_[Dd]ata/*
 wwwroot
 client/site/_cached
-client/site/_includes/partials/favicons/**
-
+src/client/site/_includes/partials/favicons/**
 src/client/site/_includes/partials/remote/**
 
 # Ignore assets created after an npm install
