@@ -24,6 +24,16 @@ $marker-size: 20px;
 $marker-border: 4px;
 $line-width: 4px;
 
+@media (max-width: 768px) {
+    body {
+        padding: 0 !important;
+    }
+}
+
+.strath-bootstrap.fixed-width .page-banner.has-image {
+  overflow: hidden;
+}
+
 
 .pagefind-ui__form {
     max-width: initial !important;
