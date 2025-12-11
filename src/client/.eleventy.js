@@ -41,6 +41,14 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("blogs", function (collections) {
+        return collections.getFilteredByGlob("site/blogs/*.md");
+    });
+
+    eleventyConfig.addCollection("testimonials", function (collections) {
+        return collections.getFilteredByGlob("site/testimonials/*.md");
+    });
+
     eleventyConfig.addShortcode("pageUrl", function (path) {
         const allPages = this.ctx.environments.collections?.all || [];
 
@@ -51,16 +59,12 @@ module.exports = function (eleventyConfig) {
             return inputPath.includes(normalizedPath) || inputPath.endsWith(normalizedPath);
         });
 
-       if (!page) {
+        if (!page) {
             console.warn(`Could not find page for path: ${path}`);
             return '#';
         }
 
         return basePath + page.url;
-    });
-
-    eleventyConfig.addCollection("blogs", function (collections) {
-        return collections.getFilteredByGlob("site/blogs/*.md");
     });
 
     // An example of an 11ty paired shortcode that creates two columns

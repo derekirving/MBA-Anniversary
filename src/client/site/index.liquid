@@ -9,6 +9,7 @@ banner:
  desc: Master of Business Administration
 rowsx2: row row-cols-1 row-cols-md-2 g-4 mb-5
 rowsx4: row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-5
+rowsx4ng: row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-0
 rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
 ---
 <div
@@ -70,7 +71,7 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
           <strong>Scotland's first MBA in 1966</strong>.
         </p>
 
-        <img class="d-md-none d-sm-block mb-sm-4" src="./images/old-school.jpg" alt="Old Photo">
+        <img class="d-block d-md-none mb-4" src="./images/old-school.jpg" alt="Old Photo">
 
         <p>
           In 1971, Strathclyde joined forces with other Scottish universities to create the Scottish Business School,
@@ -86,7 +87,7 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
         </p>
       </div>
 
-      <div class="col-md"><img class="d-sm-none d-md-inline" src="./images/old-school.jpg" alt="Old Photo"></div>
+      <div class="col-md"><img class="d-none d-md-inline" src="./images/old-school.jpg" alt="Old Photo"></div>
     </div>
   </div>
 </div>
@@ -97,46 +98,71 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
 >
   <div class="container">
     <div class="row">
+      <h2 class="mt-5" style="color:#fff !important">Student Profiles</h2>
+      <p style="color:#fff">Since 1966, xxx students have become Strathclyde MBA's. Here are some of their stories.</p>
+
       <div class="col-md-12 bg-white p-4 my-4">
         <div class="row">
           <div class="container my-4">
             <div class="row">
-              <div class="col-md justify-content-center d-flex align-items-center">
-                <img
-                  class="testimonial-image mb-0 mb-sm-4"
-                  alt="Picture of Shayan Anwar at graduation"
-                  src="./images/testimonials/Shayan_Anwar_600x600px.jpg"
-                >
+              <div class="col-md justify-content-center d-flex align-items-center me-4">
+                <a href="https://www.strath.ac.uk/courses/postgraduatetaught/mba/mba-fulltime/vijayvenkobarao/">
+                  <img
+                    class="testimonial-image mb-0 mb-sm-4"
+                    alt="Picture of Shayan Anwar at graduation"
+                    src="./images/testimonials/Vijay_Venkoba_Rao_500x500.jpg">
+                </a>
               </div>
               <div class="col-md testimonial-border p-md-4">
                 <div
                   class="mx-5"
-                  style="background: url('{{ base_path }}images/static/open-quote.svg') top left / 100px no-repeat"
-                >
+                  style="background: url('{{ base_path }}images/static/open-quote.svg') top left / 100px no-repeat">
                   <p class="h5 ms-4 pt-5">
-                    <strong
-                      >The University of Strathclyde is located in the heart of Glasgow, making student life rather
-                      exuberant. Glasgow is a city with so much embedded culture and social diversity that it makes it
-                      easier for you to make new friends and talk to people from various backgrounds.
+                    <strong>One of the most rewarding aspects of the MBA year was connecting with my classmates. The diversity of professional backgrounds and cultures created a dynamic environment where I continuously learned from others.
                     </strong>
                   </p>
 
-                  <p>
-                    Shayan Anwar <br>
-                    MSc Finance & Management
+                  <p class="my-4">
+                    Vijay Venkoba Rao<br>
+                    Full time MBA, Stephen Young Scholar
                   </p>
 
-                  <a href="/courses/postgraduatetaught/financemanagement/shayananwar/" class="btn btn-primary btn-lg"
-                    >More about Shayan's Strathlife</a
-                  >
+                  <a href="https://www.strath.ac.uk/courses/postgraduatetaught/mba/mba-fulltime/vijayvenkobarao/" class="btn btn-primary btn-lg"
+                    >More about Vijay's Strathlife</a>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="container bg-grey">
+            <div class="{{ rowsx4ng }}">
+              {% for post in collections.testimonials reversed limit: 4 %}
+                <div class="col">
+                  <a class="card-link" href="{{ post.url | url }}">
+                    <div class="card profile">
+                      <img src="{{ post.data.image.src | url }}" class="mt-4 card-img-top testimonial-image" alt="{{ post.data.title }}">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ post.data.title }}</h5>
+                        <h6 class="card-text">{{ post.data.route }}</h6>
+                        <p class="card-text"><blockquote>{{ post.data.quote }}</blockquote></p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div
+  class="container-fluid has-bg-image"
+  style="background-image: url('{{ base_path }}images/static/blue-teal-gradient.jpg')">
+
 </div>
 
 <div class="container-fluid">
@@ -254,6 +280,28 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
           <span class="visually-hidden">EQUIS accreditation logo</span>
           <img src="./images/logo-equis.webp" alt="EQUIS accreditation logo" class="img-fluid">
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="background-image: url('{{ base_path }}images/static/supermundane-grey.svg')">
+  <div class="container py-5 d-flex justify-content-center">
+    <div class="card mb-3 bg-white" style="max-width: 900px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="./images/pioneer/spring-2003.png" class="img-fluid rounded-start" alt="Cover of the Pioneer magazine from Spring 2003">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body bg-white">
+            <h5 class="card-title">Pioneering</h5>
+            <p class="card-text">During the early 2000's, the Business School produced it's own in-house magazine called "Pioneer".</p>
+            <p class="card-text">Elit fames nibh morbi dolor pulvinar blandit bibendum. Pharetra mollis dapibus proin senectus vehicula. Justo iaculis massa sit et bibendum, congue posuere ultrices.</p>
+            <p class="card-text">Elit fames nibh morbi dolor pulvinar blandit bibendum. Pharetra mollis dapibus proin senectus vehicula. Justo iaculis massa sit et bibendum, congue posuere ultrices.</p>
+            <p class="card-text"><small class="text-body-secondary">5 issues available</small></p>
+            <a class="btn btn-primary btn-lg">Read the magazines</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
