@@ -1,14 +1,16 @@
 ---
 layout: "themes/strathweb2022/main"
 ---
+<div data-pagefind-body>
+  <h1 class="d-none" data-pagefind-meta="title">{{ title }}</h1>
 
-<div data-pagefind-body class="container mt-4 mb-4 p-0">
-
-<h1 class="d-none" data-pagefind-meta="title">{{ title }}</h1>
-
-    <div class="d-none" id="content-search" data-content-id="main-content"></div>
+  <div class="container-fluid bg-grey" style="border-bottom: 4px solid #ced4da;">
+    <div class="container py-3">
+        <div class="d-none" id="content-search" data-content-id="main-content"></div>
+    </div>
 </div>
 
-<div id="main-content">
-   {{ content }}
+  <div id="main-content">
+    {{ content }}
+  </div>
 </div>

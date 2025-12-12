@@ -1,13 +1,17 @@
 ﻿/*! purgecss start ignore */
 .pagefind-ui__form:before {
   width: 1rem !important;
-  top: calc(13px * var(--pagefind-ui-scale)) !important;
+  top: calc(20px * var(--pagefind-ui-scale)) !important;
+}
+
+.pagefind-ui__form {
+    max-width: initial !important;
 }
 
 .pagefind-ui__search-input {
   border: 1px solid #dee2e6 !important;
   border-radius: 0 !important;
-  height: 2rem !important;
+  height: 3rem !important;
   font-weight: 400 !important;
   font-size: calc(18px * var(--pagefind-ui-scale)) !important;
   color: #000000 !important;
