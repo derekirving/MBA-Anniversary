@@ -1,0 +1,19 @@
+---
+layout: "layout-anniversary.liquid"
+---
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 pb-4">
+            <h3>{{ title }}</h3>
+            <h4>{{ route }}</h4>
+            <img src="{{ image.src | url }}" class="d-sm-block d-md-none" alt="{{ title }}">
+            <blockquote>{{ quote }}</blockquote>
+            {{ content }}
+        </div>
+        <div class="col-md-2 pb-md-0 pb-sm-4">
+            <img src="{{ image.src | url }}" class="d-md-block d-none" alt="{{ title }}">
+            <a href="{{ link }}" class="arrow-link mt-3" target="_blank">Study my course</a>
+            <a href="{{ 'mba-profiles' | url }}" class="arrow-link mt-3">All MBA profiles</a>
+        </div>
+    </div>
+</div>

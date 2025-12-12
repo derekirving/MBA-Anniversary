@@ -1,0 +1,19 @@
+---
+layout: "layout-anniversary.liquid"
+---
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h3>{{ title }}</h3>
+            <p>By <a target="_blank" href="{{ author.bio }}">{{ author.name }}</a> - Posted {{  date | date: "%d %B %Y" }}</p>
+            <img src="{{ image.src | url }}" alt="{{ title }}">
+            <p class="mt-4"><em>{{ description }}</em></p>
+            {{ content }}
+        </div>
+        <div class="col-md-3 pb-md-0 pb-sm-4">
+            <a href="{{ link }}" target="_blank" class="arrow-link mt-md-5 mt-sm-0">View original blog post</a>
+            <a href="https://www.sbs.strath.ac.uk/subscriptions" target="_blank" class="arrow-link mt-3">Subscribe to our blog</a>
+            <a href="{{ 'anniversary-blogs' | url }}" class="arrow-link mt-3">All MBA blog posts</a>
+        </div>
+    </div>
+</div>

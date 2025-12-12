@@ -1,0 +1,27 @@
+---
+title: MBA Profiles
+---
+<div class="container">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-5">
+    {% for post in collections.testimonials reversed %}
+      <div class="col">
+        <a class="card-link" href="{{ post.url | url }}">
+          <div class="card profile">
+            <img
+              src="{{ post.data.image.src | url }}"
+              class="mt-4 card-img-top testimonial-image"
+              alt="{{ post.data.title }}"
+            >
+            <div class="card-body">
+              <h4 class="card-title">{{ post.data.title }}</h4>
+              <h6 class="card-text">{{ post.data.route }}</h6>
+              <p class="card-text">
+                <blockquote>{{ post.data.quote }}</blockquote>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

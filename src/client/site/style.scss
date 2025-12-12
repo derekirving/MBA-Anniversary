@@ -187,6 +187,51 @@ $line-width: 4px;
   }
 }
 
+.fact__link {
+    color: #fff;
+    padding: 0 1.25rem 0 0;
+    display: block;
+    text-decoration: none;
+    text-underline-position: under;
+    background-color: #002b5c;
+}
+
+.arrow-link {
+  width: 100%;
+  background-color: #002b5c;
+  color: $white !important;
+  padding: 1rem 1.25rem;
+  display: block;
+  text-decoration: none !important;
+  position: relative;
+  text-align: left;
+
+  &::after {
+    content: "\276F";
+    font-size: 1.25rem;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $white;
+    transition: right 0.3s ease;
+  }
+
+  &[target="_blank"]::after {
+    content: "\29C9";
+  }
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    background-color: #002b5c !important;
+
+    &::after {
+      right: 0.75rem;
+    }
+  }
+}
+
 // Credit: Nicolas Gallagher and SUIT CSS.
 
 .embed-responsive {

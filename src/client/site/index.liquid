@@ -94,21 +94,20 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
 
 <div class="container-fluid bg-grey">
   <div class="container py-5">
-    <h5>A tour of the school from 1976</h5>
     <div class="row">
       <div class="col-md-6">
+        <h5 class="mb-4">A tour of the school from 1976</h5>
         {% youtube "djdCFaAuM78" %}
-        <p>We're sharing this video from our archives for those interested in a look back in time. The content and image quality aren't up to modern standards, but we hope you'll enjoy this glimpse into the past.</p>
+        <p class="mt-1">We're sharing this video from our archives for those interested in a look back in time. The content and image quality aren't up to modern standards, but we hope you'll enjoy this glimpse into the past.</p>
       </div>
       
       <div class="col-md-6 d-flex flex-column ms-md-auto" style="max-width: 500px;">
         <p>
-          A new purpose built building for the school was opened in 1976.
-        </p>
+          A new purpose built building for the school was opened in 1976 when 130 Rottenrow, Glasgow became our first official home.</p>
 
-        <p>130 Rottenrow, Glasgow became our first official home.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d271.1312594779343!2d-4.243393063984387!3d55.86232924136363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x488846a75aff5941%3A0xd336b75176e2543!2sSir%20William%20Duncan%20Building!5e1!3m2!1sen!2suk!4v1765490811563!5m2!1sen!2suk" height="450" style="border:1px solid #cccccc;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-        <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.245357513427735%2C55.86171793548261%2C-4.241838455200196%2C55.86309821109588&amp;layer=mapnik&amp;marker=55.86240807941959%2C-4.243597984313965" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=55.862408&amp;mlon=-4.243598#map=19/55.862408/-4.243598">View Larger Map</a></small>
+        <!--iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.245357513427735%2C55.86171793548261%2C-4.241838455200196%2C55.86309821109588&amp;layer=mapnik&amp;marker=55.86240807941959%2C-4.243597984313965" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=55.862408&amp;mlon=-4.243598#map=19/55.862408/-4.243598">View Larger Map</a></small -->
         
       </div>
       
@@ -175,6 +174,8 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
                 </div>
               {% endfor %}
             </div>
+
+            <a href="{{ 'mba-profiles' | url }}" class="btn btn-primary btn-lg mt-4 mb-2">View all MBA profiles</a>
           </div>
         </div>
       </div>
@@ -310,19 +311,28 @@ rowsx6: row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6 g-4 mb-5
 
 <div class="container-fluid" style="background-image: url('{{ base_path }}images/static/supermundane-grey.svg')">
   <div class="container py-5 d-flex justify-content-center">
-    <div class="card mb-3 bg-white" style="max-width: 900px;">
+    <div class="card mb-3 bg-white">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="./images/pioneer/spring-2003.png" class="img-fluid rounded-start" alt="Cover of the Pioneer magazine from Spring 2003">
+          <img src="./images/pioneer/spring-2002.png" class="img-fluid" alt="Cover of the Pioneer magazine from Spring 2003">
         </div>
         <div class="col-md-8">
-          <div class="card-body bg-white">
-            <h5 class="card-title">Pioneering</h5>
+          <div class="card-body bg-white p-md-5">
+            <h3 class="mb-4">Pioneering</h3>
             <p class="card-text">During the early 2000's, the Business School produced it's own in-house magazine called "Pioneer".</p>
             <p class="card-text">Elit fames nibh morbi dolor pulvinar blandit bibendum. Pharetra mollis dapibus proin senectus vehicula. Justo iaculis massa sit et bibendum, congue posuere ultrices.</p>
-            <p class="card-text">Elit fames nibh morbi dolor pulvinar blandit bibendum. Pharetra mollis dapibus proin senectus vehicula. Justo iaculis massa sit et bibendum, congue posuere ultrices.</p>
-            <p class="card-text"><small class="text-body-secondary">5 issues available</small></p>
-            <a class="btn btn-primary btn-lg">Read the magazines</a>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/spring-2002.pdf">Spring 2002</a> <small class="text-secondary">(479KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/autumn-2002.pdf">Autumn 2002</a> <small class="text-secondary">(500KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/spring-2003.pdf">Spring 2003</a> <small class="text-secondary">(1183KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/autumn-2003.pdf">Autumn 2003</a> <small class="text-secondary">(797KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/autumn-2004.pdf">Autumn 2004</a> <small class="text-secondary">(890KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/spring-2005.pdf">Spring 2005</a> <small class="text-secondary">(1071KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/autumn-2005.pdf">Autumn 2005</a> <small class="text-secondary">(799KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/spring-2006.pdf">Spring 2006</a> <small class="text-secondary">(909KB)</small></li>
+              <li class="mb-1 mb-sm-2"><a href="{{ base_path }}assets/pioneer/summer-2007.pdf">Summer 2007</a> <small class="text-secondary">(757KB)</small></li>
+            </ul>
+            <p class="card-text mt-4">Elit fames nibh morbi dolor pulvinar blandit bibendum. Pharetra mollis dapibus proin senectus vehicula. Justo iaculis massa sit et bibendum, congue posuere ultrices.</p>
           </div>
         </div>
       </div>
